@@ -1,0 +1,26 @@
+img.legend {
+  position: absolute;
+  left: 15px;
+  height: 1053px;
+  width: 1030px;
+}
+
+img#map-image {
+  width: 800px;
+  height: 800px;
+}
+
+.map-point-highlight {
+  cursor: pointer;
+}
+
+img.map-point-circle {
+  display: none;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+}
+
+div.panel-body > div {
+  margin-left: 20px;
+}

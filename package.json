@@ -1,0 +1,14 @@
+{
+  "name": "progetto",
+  "version": "1.0.0",
+  "description": "Progetto Visual Analytics 2016/2017",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Raffaele Grezzi (@faje9)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
