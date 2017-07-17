@@ -29,10 +29,10 @@ $(document).ready(function() {
 
 function request_movements() {
   var url = '/groups_movements';
-  var data = { start : movementsStart, limit : movementsLimit};
+  var data = {/* start : movementsStart, limit : movementsLimit*/};
   $.get(url, data, function(res) {
     if (res.num_rows > 0) {
-      movements = movements.concat(res.rows);
+      movements = res.rows;
       movementsStart += res.num_rows;
       startConsumeMovements();
     }
@@ -77,11 +77,16 @@ function consume_movement(movementIndex) {
     $(accordionSelector+' > div.panel-body').append(activity);
     latestActivities[movement.group_number - 1] = 1;
   } else if (movement.type == 'movement') {
-    activity = '<div>Walking...    (Start at ' + movement.timestamp + ')</div>';
-    if (latestActivities[movement.group_number - 1] == 1) {
-      $(accordionSelector+' > div.panel-body').append(activity);
-      latestActivities[movement.group_number - 1] = 2;
+    var isExit = is_exit(movement.x, movement.y);
+    if (isExit) {
+      activity = '<div>Exit at ' + movement.timestamp + ' from (<a class="map-point-highlight">' + movement.x + ',' + movement.y + '</a>)</div>';
+    } else {
+      activity = '<div>Walking...    (Start at ' + movement.timestamp + ')</div>';
     }
+    if (latestActivities[movement.group_number - 1] == 1 || isExit) {
+      $(accordionSelector+' > div.panel-body').append(activity);
+    }
+    latestActivities[movement.group_number - 1] = 2;
   }
 
   if (movement.client_id in clientMarkers) {
@@ -95,7 +100,7 @@ function consume_movement(movementIndex) {
 function play_pause_button_toggle() {
   if (playing) {
     stopConsumeMovements();
-    $(this).html('Start <span class="glyphicon glyphicon-play"></span>');
+    $('a#play_pause_button').html('Start <span class="glyphicon glyphicon-play"></span>');
     playing = false;
   } else {
     if (movements.length == 0) {
@@ -103,7 +108,7 @@ function play_pause_button_toggle() {
     } else {
       startConsumeMovements();
     }
-    $(this).html('Pause <span class="glyphicon glyphicon-pause"></span>');
+    $('a#play_pause_button').html('Pause <span class="glyphicon glyphicon-pause"></span>');
     playing = true;
   }
 }

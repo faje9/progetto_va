@@ -74,3 +74,10 @@ function show_point_highlighter_at(x, y) {
     pointHighlighter.css('display', 'none');
   }, 5000);
 }
+
+function is_exit(x, y) {
+  if ((x == 63 && y == 99) || (x == 0 && y == 67) || (x == 99 && y == 77)) {
+    return true;
+  }
+  return false;
+}

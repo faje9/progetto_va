@@ -24,3 +24,125 @@ img.map-point-circle {
 div.panel-body > div {
   margin-left: 20px;
 }
+svg {
+  position: absolute;
+  z-index: 100;
+}
+
+rect.tundra-land {
+  fill: cadetblue;
+  fill-opacity: 0.5;
+}
+
+circle.tundra-land {
+  stroke: cadetblue;
+  stroke-opacity: 0.7;
+  fill: cadetblue;
+  fill-opacity: 0.6;
+}
+
+text.tundra-land {
+  text-anchor: middle;
+  stroke : black;
+  stroke-width: 1px;
+  stroke-opacity: 7.0;
+}
+
+rect.entry-corridor {
+  fill: beige;
+  fill-opacity: 0.5;
+}
+
+circle.entry-corridor {
+  stroke: beige;
+  stroke-opacity: 0.7;
+  fill: beige;
+  fill-opacity: 0.6;
+}
+
+text.entry-corridor {
+  text-anchor: middle;
+  stroke: black;
+  stroke-width: 1px;
+  stroke-opacity: 0.7;
+  fill-opacity: 0.2;
+}
+
+polygon.kiddie-land {
+  fill: yellowgreen;
+  fill-opacity: 0.5;
+}
+
+circle.kiddie-land {
+  stroke: yellowgreen;
+  stroke-opacity: 0.7;
+  fill: yellowgreen;
+  fill-opacity: 0.6;
+}
+
+text.kiddie-land {
+  text-anchor: middle;
+  stroke: black;
+  stroke-width: 1px;
+  stroke-opacity: 0.7;
+  fill-opacity: 0.2;
+}
+
+polygon.wet-land {
+  fill: green;
+  fill-opacity: 0.5;
+}
+
+circle.wet-land {
+  stroke: green;
+  stroke-opacity: 0.7;
+  fill: green;
+  fill-opacity: 0.6;
+}
+
+text.wet-land {
+  text-anchor: middle;
+  stroke: black;
+  stroke-width: 1px;
+  stroke-opacity: 0.7;
+  fill-opacity: 0.2;
+}
+
+polygon.coaster-alley {
+  fill: brown;
+  fill-opacity: 0.5;
+}
+
+circle.coaster-alley {
+  stroke: brown;
+  stroke-opacity: 0.7;
+  fill: brown;
+  fill-opacity: 0.6;
+}
+
+text.coaster-alley {
+  text-anchor: middle;
+  stroke: black;
+  stroke-width: 1px;
+  stroke-opacity: 0.7;
+  fill-opacity: 0.2;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}

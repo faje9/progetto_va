@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>MC 2</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Progetto VA</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="/mc_one">MC 1</a></li>
+            <li class="active"><a href="/mc_two">MC 2<span class="sr-only">(current)</span></a></li>
+            <li><a href="/user_test">User test</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a id="timestamp_display" href="#"></a></li>
+            <li><a id="play_pause_button" href="#">Start <span class="glyphicon glyphicon-play"></span></a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <!-- <div class="container"> -->
+    <div id="highliters-container" class="col-md-3">
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Friday
+              </a>
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body">
+              <p>Total messages: <span id="friday-total-messages" class="badge">0</span></p>
+              <p>In-park messages: <span id="friday-inpark-messages" class="badge">0</span></p>
+              <p>External messages: <span id="friday-external-messages" class="badge">0</span></p>
+              <p style="color: cadetblue;">Tundra Land messages: <span id="friday-tundra-land-messages" class="badge">0</span></p>
+              <p style="color: beige;">Entry Corridor messages: <span id="friday-entry-corridor-messages" class="badge">0</span></p>
+              <p style="color: yellowgreen;">Kiddie Land messages: <span id="friday-kiddie-land-messages" class="badge">0</span></p>
+              <p style="color: green;">Wet Land messages: <span id="friday-wet-land-messages" class="badge">0</span></p>
+              <p style="color: brown;">Coaster Alley messages: <span id="friday-coaster-alley-messages" class="badge">0</span></p>
+              <p>Messages time bands:</p>
+              <svg id="friday-chart" width="398" height="200" style="position:relative;" />
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Saturday
+              </a>
+            </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="panel-body">
+              <p>Total messages: <span id="saturday-total-messages" class="badge">0</span></p>
+              <p>In-park messages: <span id="saturday-inpark-messages" class="badge">0</span></p>
+              <p>External messages: <span id="friday-external-messages" class="badge">0</span></p>
+              <p style="color: cadetblue;">Tundra Land messages: <span id="saturday-tundra-land-messages" class="badge">0</span></p>
+              <p style="color: beige;">Entry Corridor messages: <span id="saturday-entry-corridor-messages" class="badge">0</span></p>
+              <p style="color: yellowgreen;">Kiddie Land messages: <span id="saturday-kiddie-land-messages" class="badge">0</span></p>
+              <p style="color: green;">Wet Land messages: <span id="saturday-wet-land-messages" class="badge">0</span></p>
+              <p style="color: brown;">Coaster Alley messages: <span id="saturday-coaster-alley-messages" class="badge">0</span></p>
+              <p>Messages time bands:</p>
+              <svg id="saturday-chart" width="398" height="200" style="position:relative;" />
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingThree">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Sunday
+              </a>
+            </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="panel-body">
+              <p>Total messages: <span id="sunday-total-messages" class="badge">0</span></p>
+              <p>In-park messages: <span id="sunday-inpark-messages" class="badge">0</span></p>
+              <p>External messages: <span id="sunday-external-messages" class="badge">0</span></p>
+              <p style="color: cadetblue;">Tundra Land messages: <span id="sunday-tundra-land-messages" class="badge">0</span></p>
+              <p style="color: beige;">Entry Corridor messages: <span id="sunday-entry-corridor-messages" class="badge">0</span></p>
+              <p style="color: yellowgreen;">Kiddie Land messages: <span id="sunday-kiddie-land-messages" class="badge">0</span></p>
+              <p style="color: green;">Wet Land messages: <span id="sunday-wet-land-messages" class="badge">0</span></p>
+              <p style="color: brown;">Coaster Alley messages: <span id="sunday-coaster-alley-messages" class="badge">0</span></p>
+              <p>Messages time bands:</p>
+              <svg id="sunday-chart" width="398" height="200" style="position:relative;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="map_container" class="col-md-9">
+      <svg width="800" height="800">
+        <g>
+          <rect class="tundra-land" width="400" height="360" />
+          <circle class="tundra-land" cx="200" cy="180" r="50" />
+          <text class="tundra-land" x="200" y="190">0</text>
+        </g>
+        <g transform="translate(400,0)">
+          <rect class="entry-corridor" width="180" height="360" />
+          <circle class="entry-corridor" cx="90" cy="180" r="50" />
+          <text class="entry-corridor" x="90" y="190">0</text>
+        </g>
+        <g transform="translate(580,0)">
+          <polygon class="kiddie-land" points="0,0 220,0 220,280 130,280 130,360 0,360" />
+          <circle class="kiddie-land" cx="110" cy="180" r="50" />
+          <text class="kiddie-land" x="110" y="190">0</text>
+        </g>
+        <g transform="translate(0,360)">
+          <polygon class="wet-land" points="0,0 220,0 220,-40 340,-40 340,0 660,0 660,180, 0,180" />
+          <circle class="wet-land" cx="330" cy="90" r="50" />
+          <text class="wet-land" x="330" y="95">0</text>
+        </g>
+        <g transform="translate(0,540)">
+          <polygon class="coaster-alley" points="0,0 660,0 660,-180 710,-180 710,-260 800,-260 800,260, 0,260" />
+          <circle class="coaster-alley" cx="460" cy="140" r="50" />
+          <text class="coaster-alley" x="460" y="145">0</text>
+        </g>
+      </svg>
+      <img id="map-image" src="images/map.jpg" />
+      <img class="legend" src="images/parkmap-legend.png" />
+    </div>
+    <!-- </div> -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/mc_two.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script>
+
+    var fridayData = {
+      '8-10' : 0,
+      '10-12' : 0,
+      '12-14' : 0,
+      '14-16' : 0,
+      '16-18' : 0,
+      '18-20' : 0,
+      '20-22' : 0,
+      '22-24' : 0
+    };
+    var fridayChart = d3.select("svg#friday-chart"),
+        margin = {top: 20, right: 20, bottom: 30, left: 40},
+        width = +fridayChart.attr("width") - margin.left - margin.right,
+        height = +fridayChart.attr("height") - margin.top - margin.bottom;
+
+    var fridayX = d3.scale.ordinal()
+        .rangeRoundBands([0, width], .1);
+
+    var fridayY = d3.scale.linear()
+        .range([height, 0]);
+
+    // D3 Axis - renders a d3 scale in SVG
+    var fridayXAxis = d3.svg.axis()
+        .scale(fridayX)
+        .orient("bottom");
+
+    var fridayYAxis = d3.svg.axis()
+        .scale(fridayY)
+        .orient("left")
+        .ticks(10, "s");
+    // add a "g" element (think "group")
+    // annoying d3 gotcha - the 'svg' variable here is a 'g' element
+    // the final line sets the transform on <g>, not on <svg>
+    fridayChart.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(30," + height + ")")
+
+    fridayChart.append("g")
+        .attr("class", "y axis")
+        .attr("transform", "translate(30,0)")
+      /*.append("text") // just for the title (ticks are automatic)
+        .attr("transform", "rotate(-90)") // rotate the text!
+        .attr("y", 6)
+        .attr("dy", ".71em")
+        .style("text-anchor", "end")
+        .text("Communications");*/
+    draw(fridayData, fridayChart, fridayX, fridayY, fridayXAxis, fridayYAxis);
+
+    var saturdayData = {
+      '8-10' : 0,
+      '10-12' : 0,
+      '12-14' : 0,
+      '14-16' : 0,
+      '16-18' : 0,
+      '18-20' : 0,
+      '20-22' : 0,
+      '22-24' : 0
+    };
+    var saturdayChart = d3.select("svg#saturday-chart"),
+        margin = {top: 20, right: 20, bottom: 30, left: 40},
+        width = +saturdayChart.attr("width") - margin.left - margin.right,
+        height = +saturdayChart.attr("height") - margin.top - margin.bottom;
+
+    var saturdayX = d3.scale.ordinal()
+        .rangeRoundBands([0, width], .1);
+
+    var saturdayY = d3.scale.linear()
+        .range([height, 0]);
+
+    // D3 Axis - renders a d3 scale in SVG
+    var saturdayXAxis = d3.svg.axis()
+        .scale(saturdayX)
+        .orient("bottom");
+
+    var saturdayYAxis = d3.svg.axis()
+        .scale(saturdayY)
+        .orient("left")
+        .ticks(10, "s");
+    // add a "g" element (think "group")
+    // annoying d3 gotcha - the 'svg' variable here is a 'g' element
+    // the final line sets the transform on <g>, not on <svg>
+    saturdayChart.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(30," + height + ")")
+
+    saturdayChart.append("g")
+        .attr("class", "y axis")
+        .attr("transform", "translate(30,0)")
+      /*.append("text") // just for the title (ticks are automatic)
+        .attr("transform", "rotate(-90)") // rotate the text!
+        .attr("y", 6)
+        .attr("dy", ".71em")
+        .style("text-anchor", "end")
+        .text("Communications");*/
+    draw(saturdayData, saturdayChart, saturdayX, saturdayY, saturdayXAxis, saturdayYAxis);
+
+    var sundayData = {
+      '8-10' : 0,
+      '10-12' : 0,
+      '12-14' : 0,
+      '14-16' : 0,
+      '16-18' : 0,
+      '18-20' : 0,
+      '20-22' : 0,
+      '22-24' : 0
+    };
+    var sundayChart = d3.select("svg#sunday-chart"),
+        margin = {top: 20, right: 20, bottom: 30, left: 40},
+        width = +sundayChart.attr("width") - margin.left - margin.right,
+        height = +sundayChart.attr("height") - margin.top - margin.bottom;
+
+    var sundayX = d3.scale.ordinal()
+        .rangeRoundBands([0, width], .1);
+
+    var sundayY = d3.scale.linear()
+        .range([height, 0]);
+
+    // D3 Axis - renders a d3 scale in SVG
+    var sundayXAxis = d3.svg.axis()
+        .scale(sundayX)
+        .orient("bottom");
+
+    var sundayYAxis = d3.svg.axis()
+        .scale(sundayY)
+        .orient("left")
+        .ticks(10, "s");
+    // add a "g" element (think "group")
+    // annoying d3 gotcha - the 'svg' variable here is a 'g' element
+    // the final line sets the transform on <g>, not on <svg>
+    sundayChart.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(30," + height + ")")
+
+    sundayChart.append("g")
+        .attr("class", "y axis")
+        .attr("transform", "translate(30,0)")
+      /*.append("text") // just for the title (ticks are automatic)
+        .attr("transform", "rotate(-90)") // rotate the text!
+        .attr("y", 6)
+        .attr("dy", ".71em")
+        .style("text-anchor", "end")
+        .text("Communications");*/
+    draw(sundayData, sundayChart, sundayX, sundayY, sundayXAxis, sundayYAxis);
+
+    function draw(data, chart, xScale, yScale, xAxis, yAxis) {
+      // measure the domain (for x, unique letters) (for y [0,maxFrequency])
+      // now the scales are finished and usable
+      var values = Object.values(data);
+      var max = d3.max(Object.keys(data), function(d) {return data[d];});
+      if (max == 0) {
+        max = 10;
+      }
+      xScale.domain(Object.keys(data));
+      yScale.domain([0, max]);
+      // another g element, this time to move the origin to the bottom of the svg element
+      // someSelection.call(thing) is roughly equivalent to thing(someSelection[i])
+      //   for everything in the selection\
+      // the end result is g populated with text and lines!
+      chart.select('.x.axis').call(xAxis);
+
+      // same for yAxis but with more transform and a title
+      chart.select(".y.axis").call(yAxis)
+
+      // THIS IS THE ACTUAL WORK!
+      var bars = chart.selectAll(".bar").data(Object.keys(data), function(d) {
+        return d;
+      }); // (data) is an array/iterable thing, second argument is an ID generator function
+
+      bars.exit()
+        .transition()
+          .duration(300)
+        .attr("y", yScale(0))
+        .attr("height", height - yScale(0))
+        .style('fill-opacity', 1e-6)
+        .remove();
+      // data that needs DOM = enter() (a set/selection, not an event!)
+      bars.enter().append("rect")
+        .attr("class", "bar")
+        .attr("y", yScale(0))
+        .attr("transform", "translate(30,0)")
+        .attr("height", height - yScale(0));
+
+      // the "UPDATE" set:
+      bars.transition().duration(300).attr("x", function(d) { return xScale(d); }) // (d) is one item from the data array, x is the scale object from above
+        .attr("width", xScale.rangeBand()) // constant, so no callback function(d) here
+        .attr("y", function(d) { return yScale(data[d]); })
+        .attr("height", function(d) { return height - yScale(data[d]); }); // flip the height, because y's domain is bottom up, but SVG renders top down
+    }
+
+    </script>
+  </body>
+</html>

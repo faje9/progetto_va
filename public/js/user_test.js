@@ -5,9 +5,6 @@ var movementCounter = 0;
 var sleepTime = 500;
 var refreshIntervalId;
 
-var firstGroup = {'1591741' : undefined, '825652' : undefined};
-var secondGroup = {'2007598' : undefined, '455752' : undefined, '1881823' : undefined, '374745' : undefined, '422300' : undefined, '73216' : undefined, '1109689' : undefined, '1007202' : undefined};
-
 $(document).ready(function() {
   var position = $('#map-image').position();
   relativeX = position.left;
@@ -24,7 +21,7 @@ $(document).ready(function() {
 
 function request_movements() {
   var url = '/user_movements';
-  var data = { user : '657863', when : 'fri'};
+  var data = { user : '657863', when : 'all'};
   $.get(url, data, function(res) {
     if (res.num_rows > 0) {
       movements = movements.concat(res.rows);
